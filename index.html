@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Łukasz Romanek">
+    <title>Prognoza pogody</title>
+    <link href="https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./dist/css/style.min.css">
+    <script src="https://kit.fontawesome.com/b29ba5ca35.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="header__title">sprawdź prognozę pogody</h1>
+        <p class="header__description">Aplikacja wykorzystująca API pogodowe z portalu <a
+                href="https://openweathermap.org" target="_blank" class="header__description-link">OpenWeather</a></p>
+    </header>
+    <div class="wrapper">
+        <div class="area-box">
+            <input type="text" class="area-box__input" placeholder="Nazwa miasta...">
+            <button class="area-box__btn"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="error">
+            <p class="error__text"></p>
+        </div>
+        <div class="weather-boxes">
+            <h2 class="weather-boxes__city"></h2>
+            <div class="weather-box">
+                <h3 class="weather-box__title">pogoda</h3>
+                <p class="weather-box__value weather"></p>
+            </div>
+            <div class="weather-box">
+                <h3 class="weather-box__title">temperatura</h3>
+                <p class="weather-box__value temperature"></p>
+            </div>
+            <div class="weather-box">
+                <h3 class="weather-box__title">wilgotność</h3>
+                <p class="weather-box__value humidity"></p>
+            </div>
+            <div class="weather-box">
+                <h3 class="weather-box__title">wiatr</h3>
+                <p class="weather-box__value wind"></p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p class="copyright">&copy; 2022 Łukasz Romanek</p>
+        <a href="#" target="_blank" class="git-link"><i class="fa-brands fa-github"></i></a>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./dist/js/script.min.js"></script>
+</body>
+
+</html>

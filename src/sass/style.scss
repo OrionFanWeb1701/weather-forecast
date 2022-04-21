@@ -1,0 +1,274 @@
+@use './colors' as *;
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+html {
+	font-size: 62.5%;
+}
+
+a {
+	text-decoration: none;
+	color: #000;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	height: 100vh;
+	font-family: 'Racing Sans One', cursive;
+	background-image: url('../../dist/img/default-big.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.wrapper,
+.header {
+	width: 90%;
+}
+
+.wrapper,
+.footer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.header {
+	margin: 0.5em 0;
+	background-color: #fff;
+	border-radius: 10px;
+	text-align: center;
+	box-shadow: $bgShadow;
+	&__title {
+		padding: 0.5em;
+		font-size: 1.8rem;
+		text-transform: uppercase;
+	}
+	&__description {
+		padding: 0.5em;
+		font-size: 1.5rem;
+		color: rgb(73, 73, 73);
+		&-link {
+			color: rgb(232, 80, 33);
+			transition: color 0.3s;
+			&:hover {
+				color: rgb(189, 63, 24);
+			}
+		}
+	}
+}
+
+.wrapper {
+	flex-direction: column;
+	.area-box {
+		display: flex;
+		justify-content: space-evenly;
+		align-items: center;
+		padding: 1em;
+		&__input {
+			padding: 0.3em 0.6em;
+			width: 70%;
+			outline: none;
+			border-radius: 10px;
+			font-size: 2rem;
+			&:focus {
+				border: 2px solid $firstColor;
+			}
+		}
+		&__btn {
+			width: 20%;
+			padding: 0.3em 0.6em;
+			border: none;
+			border-radius: 10px;
+			font-size: 2rem;
+			background-color: $firstColor;
+			box-shadow: 0 0 5px #000;
+			transition: background-color 0.3s;
+			i {
+				color: #fff;
+			}
+			&:hover {
+				background-color: $hoverColor;
+				cursor: pointer;
+			}
+		}
+	}
+	.error {
+		min-height: 13px;
+		text-align: center;
+		&__text {
+			font-size: 1.2rem;
+			color: rgb(227, 6, 6);
+			font-weight: 700;
+			text-shadow: 0 0 8px #fff;
+		}
+	}
+	.weather-boxes {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width: 100%;
+		margin: 1em 0;
+		padding: 1em;
+		background-color: $bgColor;
+		border-radius: 10px;
+		text-align: center;
+		text-transform: uppercase;
+		text-shadow: 0 0 8px #fff;
+		.weather-boxes__city {
+			width: 100%;
+			min-height: 38px;
+			font-family: 'Racing Sans One', cursive;
+			font-size: 2.5rem;
+			color: $firstColor;
+			font-weight: 700;
+		}
+		.weather-box {
+			padding: 1em;
+			width: 80%;
+			border-bottom: 2px dotted #000;
+			&:last-child {
+				border-bottom: none;
+			}
+			&__title {
+				padding-bottom: 0.5em;
+				font-size: 1.6rem;
+				font-weight: 700;
+			}
+			&__value {
+				min-height: 18px;
+				font-size: 1.4rem;
+				font-weight: 400;
+			}
+		}
+	}
+}
+
+.footer {
+	width: 100%;
+	color: #fff;
+	background-color: $firstColor;
+	box-shadow: 0 0 5px #000;
+	.copyright {
+		padding: 0.5em;
+	}
+	.git-link {
+		padding: 0.5em;
+		color: #fff;
+		font-size: 2rem;
+		transition: color 0.3s;
+		&:hover {
+			color: #ddd;
+		}
+	}
+}
+
+@media (min-width: 375px) {
+	.header {
+		margin-top: 2em;
+	}
+}
+
+@media (min-width: 414px) {
+	.header {
+		&__title {
+			font-size: 2.4rem;
+		}
+		&__description {
+			padding: 0.5em 1em;
+			font-size: 1.8rem;
+		}
+	}
+	.wrapper {
+		.error {
+			min-height: 19px;
+			&__text {
+				font-size: 1.5rem;
+			}
+		}
+		.weather-boxes {
+			.weather-boxes__city {
+				margin-bottom: 1em;
+				min-height: 43px;
+				font-size: 3.5rem;
+			}
+			.weather-box {
+				&__title {
+					font-size: 2rem;
+				}
+				&__value {
+					min-height: 19px;
+					font-size: 1.6rem;
+				}
+			}
+		}
+	}
+	.footer {
+		.copyright {
+			font-size: 1.2rem;
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.wrapper {
+		.area-box {
+			width: 70%;
+		}
+		.error {
+			min-height: 19px;
+			text-align: left;
+			&__text {
+				font-size: 1.6rem;
+			}
+		}
+		.weather-boxes {
+			width: 90%;
+			margin: 5em 0;
+			.weather-box {
+				width: 80%;
+			}
+		}
+	}
+}
+
+@media (min-width: 992px) {
+	.wrapper {
+		.area-box {
+			width: 50%;
+		}
+		.weather-boxes {
+			width: 60%;
+		}
+	}
+}
+
+@media (min-width: 1200px) {
+	.wrapper {
+		.area-box {
+			width: 30%;
+		}
+		.weather-boxes {
+			width: 40%;
+		}
+	}
+	.footer {
+		.copyright {
+			font-size: 1.5rem;
+		}
+		.git-link {
+			font-size: 3rem;
+		}
+	}
+}
