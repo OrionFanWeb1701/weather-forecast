@@ -10,4 +10,4 @@ Application created with:
 - CSS
 - JavaScript
 
-
+[Run the project - weather-forecast](https://orionfanweb1701.github.io/weather-forecast/)
