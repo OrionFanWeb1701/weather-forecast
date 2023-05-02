@@ -1,4 +1,4 @@
-<b>Check the weather forecast around the world</b>
+# Check the weather forecast around the world
 
 :snowflake: :zap: :foggy: :partly_sunny:
 
